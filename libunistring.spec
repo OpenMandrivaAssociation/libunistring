@@ -1,5 +1,5 @@
 %define name libunistring
-%define version 0.9.1.1
+%define version 0.9.3
 %define release %mkrel 1
 %define major 0
 %define libname %mklibname unistring %major
