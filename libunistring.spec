@@ -99,7 +99,6 @@ rm -rf %{buildroot}
 %defattr(-,root,root)
 %doc HACKING DEPENDENCIES THANKS ChangeLog
 %doc %_datadir/doc/%name/*.html
-%_libdir/libunistring.la
 %_libdir/libunistring.so
 %_infodir/libunistring.info*
 %_includedir/unistring
