@@ -84,12 +84,6 @@ rm -rf %{buildroot}
 %postun -n %libname -p /sbin/ldconfig
 %endif
 
-%post -n %develname
-%_install_info %{name}.info
-
-%preun -n %develname
-%_remove_install_info %{name}.info
-
 %files -n %libname
 %defattr(-,root,root)
 %doc AUTHORS NEWS README
