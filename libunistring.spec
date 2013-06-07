@@ -5,7 +5,7 @@
 Summary:	GNU Unicode string library
 Name:		libunistring
 Version:	0.9.3
-Release:	4
+Release:	5
 License:	LGPLv2+
 Group:		System/Libraries
 Url:		http://www.gnu.org/software/libunistring/
@@ -49,18 +49,20 @@ line breaks, normalization, case folding, regular expressions).
 %setup -q
 
 %build
-%configure2_5x --disable-static
+%configure2_5x \
+		--disable-static
+
 %make
 
 %install
 %makeinstall_std
 
 %files -n %{libname}
-%doc AUTHORS NEWS README
 %{_libdir}/libunistring.so.%{major}*
 
 %files -n %{develname}
 %doc HACKING DEPENDENCIES THANKS ChangeLog
+%doc AUTHORS NEWS README
 %doc %{_datadir}/doc/%{name}/*.html
 %{_libdir}/libunistring.so
 %{_infodir}/libunistring.info*
