@@ -10,8 +10,8 @@ License:	LGPLv2+
 Group:		System/Libraries
 Url:		http://www.gnu.org/software/libunistring/
 Source0:	http://ftp.gnu.org/gnu/libunistring/%{name}-%{version}.tar.gz
-BuildRequires:	locales-fr
-BuildRequires:	texinfo
+#BuildRequires:	locales-fr
+#BuildRequires:	texinfo
 
 %description
 This library implements Unicode strings (in three flavours: UTF-8
