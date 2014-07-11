@@ -5,7 +5,7 @@
 Summary:	GNU Unicode string library
 Name:		libunistring
 Version:	0.9.3
-Release:	11
+Release:	12
 License:	LGPLv2+
 Group:		System/Libraries
 Url:		http://www.gnu.org/software/libunistring/
