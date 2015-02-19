@@ -4,8 +4,8 @@
 
 Summary:	GNU Unicode string library
 Name:		libunistring
-Version:	0.9.3
-Release:	13
+Version:	0.9.5
+Release:	1
 License:	LGPLv2+
 Group:		System/Libraries
 Url:		http://www.gnu.org/software/libunistring/
@@ -44,7 +44,7 @@ This package includes the development files for %{name}.
 %setup -q
 
 %build
-%configure2_5x \
+%configure \
 	--disable-static
 
 %make
