@@ -1,4 +1,4 @@
-%define major 0
+%define major 2
 %define libname %mklibname unistring %{major}
 %define devname %mklibname -d unistring
 
