@@ -1,11 +1,11 @@
-%define major 2
-%define libname %mklibname unistring %{major}
-%define devname %mklibname -d unistring
+%define	major	2
+%define	libname	%mklibname unistring %{major}
+%define	devname	%mklibname -d unistring
 
 Summary:	GNU Unicode string library
 Name:		libunistring
 Version:	0.9.5
-Release:	1
+Release:	2
 License:	LGPLv2+
 Group:		System/Libraries
 Url:		http://www.gnu.org/software/libunistring/
@@ -44,9 +44,7 @@ This package includes the development files for %{name}.
 %setup -q
 
 %build
-%configure \
-	--disable-static
-
+%configure
 %make
 
 %install
@@ -63,4 +61,3 @@ This package includes the development files for %{name}.
 %{_infodir}/libunistring.info*
 %{_includedir}/unistring
 %{_includedir}/*.h
-
