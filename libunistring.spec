@@ -4,7 +4,7 @@
 
 Summary:	GNU Unicode string library
 Name:		libunistring
-Version:	0.9.7
+Version:	0.9.8
 Release:	1
 License:	LGPLv2+
 Group:		System/Libraries
