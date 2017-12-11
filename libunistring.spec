@@ -47,6 +47,10 @@ This package includes the development files for %{name}.
 %apply_patches
 
 %build
+# (tpg) unistr/.libs/u16-strstr.o:u16-strstr.c:function knuth_morris_pratt: error: undefined reference to '__muloti4'
+export CC=gcc
+export CXX=g++
+
 %configure
 %make
 
