@@ -1,15 +1,17 @@
 %define major 2
 %define libname %mklibname unistring %{major}
 %define devname %mklibname -d unistring
+%define _disable_lto 1
 
 Summary:	GNU Unicode string library
 Name:		libunistring
-Version:	0.9.7
+Version:	0.9.8
 Release:	1
 License:	LGPLv2+
 Group:		System/Libraries
 Url:		http://www.gnu.org/software/libunistring/
 Source0:	http://ftp.gnu.org/gnu/libunistring/%{name}-%{version}.tar.gz
+Patch0:		libunistring-0.9.8-check-for-__builtin_mul_overflow_p.patch
 #BuildRequires:	locales-fr
 #BuildRequires:	texinfo
 
@@ -42,8 +44,13 @@ This package includes the development files for %{name}.
 
 %prep
 %setup -q
+%apply_patches
 
 %build
+# (tpg) unistr/.libs/u16-strstr.o:u16-strstr.c:function knuth_morris_pratt: error: undefined reference to '__muloti4'
+export CC=gcc
+export CXX=g++
+
 %configure
 %make
 
