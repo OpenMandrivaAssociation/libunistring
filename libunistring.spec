@@ -10,6 +10,7 @@ License:	LGPLv2+
 Group:		System/Libraries
 Url:		http://www.gnu.org/software/libunistring/
 Source0:	http://ftp.gnu.org/gnu/libunistring/%{name}-%{version}.tar.gz
+Patch0:		libunistring-0.9.8-check-for-__builtin_mul_overflow_p.patch
 #BuildRequires:	locales-fr
 #BuildRequires:	texinfo
 
@@ -42,6 +43,7 @@ This package includes the development files for %{name}.
 
 %prep
 %setup -q
+%apply_patches
 
 %build
 %configure
