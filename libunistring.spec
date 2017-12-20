@@ -3,6 +3,7 @@
 %define devname %mklibname -d unistring
 
 %global optflags %{optflags} -O3 --rtlib=compiler-rt
+%define _disable_lto 1
 
 Summary:	GNU Unicode string library
 Name:		libunistring
