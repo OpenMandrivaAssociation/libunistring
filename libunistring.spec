@@ -2,7 +2,7 @@
 %define libname %mklibname unistring %{major}
 %define devname %mklibname -d unistring
 
-%global optflags %{optflags} -O3 -rtlib=compiler-rt
+%global optflags %{optflags} -O3
 
 Summary:	GNU Unicode string library
 Name:		libunistring
@@ -48,6 +48,10 @@ This package includes the development files for %{name}.
 %apply_patches
 
 %build
+# (tpg) try to fix build
+%global __cc %{__cc} --rtlib=compiler-rt
+%global __cxx %{__cxx} --rtlib=compiler-rt
+
 %configure
 %make
 
