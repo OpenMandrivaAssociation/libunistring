@@ -45,7 +45,7 @@ This package includes the development files for %{name}.
 
 %prep
 %setup -q
-%apply_patches
+%autopatch -p1
 
 %build
 # (tpg) try to fix build
@@ -53,10 +53,10 @@ This package includes the development files for %{name}.
 %global __cxx %{__cxx} --rtlib=compiler-rt
 
 %configure
-%make
+%make_build
 
 %install
-%makeinstall_std
+%make_install
 
 %files -n %{libname}
 %{_libdir}/libunistring.so.%{major}*
