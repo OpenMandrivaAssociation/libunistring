@@ -49,8 +49,10 @@ This package includes the development files for %{name}.
 
 %build
 # (tpg) try to fix build
+%ifnarch %{riscv}
 %global __cc %{__cc} --rtlib=compiler-rt
 %global __cxx %{__cxx} --rtlib=compiler-rt
+%endif
 
 %configure
 %make_build
