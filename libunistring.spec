@@ -7,12 +7,13 @@
 Summary:	GNU Unicode string library
 Name:		libunistring
 Version:	0.9.10
-Release:	3
+Release:	4
 License:	LGPLv2+
 Group:		System/Libraries
 Url:		http://www.gnu.org/software/libunistring/
 Source0:	http://ftp.gnu.org/gnu/libunistring/%{name}-%{version}.tar.xz
 Patch0:		libunistring-0.9.8-check-for-__builtin_mul_overflow_p.patch
+Patch1:		libunistring-0.9.10-add-pkg-config-support.patch
 #BuildRequires:	locales-fr
 #BuildRequires:	texinfo
 
@@ -44,8 +45,8 @@ Provides:	%{name}-devel = %{version}-%{release}
 This package includes the development files for %{name}.
 
 %prep
-%setup -q
-%autopatch -p1
+%autosetup -p1
+./autogen.sh --skip-gnulib
 
 %build
 # (tpg) try to fix build
@@ -71,3 +72,4 @@ This package includes the development files for %{name}.
 %{_infodir}/libunistring.info*
 %{_includedir}/unistring
 %{_includedir}/*.h
+%{_libdir}/pkgconfig/*.pc
