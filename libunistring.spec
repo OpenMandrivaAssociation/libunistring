@@ -1,6 +1,6 @@
 # libunistring is used by libidn2, which is used by
 # systemd, which is used by wine
-%ifnarch %{x86_64}
+%ifarch %{x86_64}
 %bcond_without compat32
 %else
 %bcond_with compat32
