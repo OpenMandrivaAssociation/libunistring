@@ -1,0 +1,21 @@
+diff -up libunistring-0.9.10/configure.ac.3~ libunistring-0.9.10/configure.ac
+--- libunistring-0.9.10/configure.ac.3~	2021-07-28 21:32:22.312434214 +0200
++++ libunistring-0.9.10/configure.ac	2021-07-28 21:32:22.429468206 +0200
+@@ -16,14 +16,13 @@ dnl along with this program.  If not, se
+ 
+ dnl Process this file with autoconf to produce a configure script.
+ 
+-AC_PREREQ([2.63])
+-AC_INIT
++AC_PREREQ([2.71])
++AC_INIT([libunistring],[0.9.10])
+ AC_CONFIG_SRCDIR([lib/unistring/version.in.h])
+ AC_CONFIG_AUX_DIR([build-aux])
+ . $srcdir/version.sh
+-gl_INIT_PACKAGE([libunistring], [$VERSION_NUMBER])
+ AM_INIT_AUTOMAKE([silent-rules dist-xz])
+-AM_CONFIG_HEADER([config.h])
++AC_CONFIG_HEADERS([config.h])
+ 
+ dnl Override automake's tar command used for creating distributions.
+ am__tar='${AMTAR} chof - --owner=root --group=root "$$tardir"'

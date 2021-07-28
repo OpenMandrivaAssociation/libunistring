@@ -26,6 +26,7 @@ Url:		http://www.gnu.org/software/libunistring/
 Source0:	http://ftp.gnu.org/gnu/libunistring/%{name}-%{version}.tar.xz
 Patch0:		libunistring-0.9.8-check-for-__builtin_mul_overflow_p.patch
 Patch1:		libunistring-0.9.10-add-pkg-config-support.patch
+Patch2:		libunistring-autoconf.patch
 #BuildRequires:	locales-fr
 #BuildRequires:	texinfo
 
@@ -97,6 +98,7 @@ This package includes the static libraries for %{name}.
 
 %prep
 %autosetup -p1
+rm -f m4/libtool.m4 m4/lt*.m4
 ./autogen.sh --skip-gnulib
 
 export CONFIGURE_TOP="$(pwd)"
