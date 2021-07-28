@@ -9,15 +9,17 @@
 %define major 2
 %define libname %mklibname unistring %{major}
 %define devname %mklibname -d unistring
+%define sdevname %mklibname -d -s unistring
 %define lib32name libunistring%{major}
 %define dev32name libunistring-devel
+%define sdev32name libunistring-static-devel
 
 %global optflags %{optflags} -O3
 
 Summary:	GNU Unicode string library
 Name:		libunistring
 Version:	0.9.10
-Release:	5
+Release:	6
 License:	LGPLv2+
 Group:		System/Libraries
 Url:		http://www.gnu.org/software/libunistring/
@@ -53,6 +55,15 @@ Requires:	%{libname} = %{version}-%{release}
 %description -n %{devname}
 This package includes the development files for %{name}.
 
+%package -n %{sdevname}
+Group:		Development/C
+Summary:	GNU Unicode string library - static libraries
+Requires:	%{devname} = %{version}-%{release}
+Provides:	unistring-static-devel = %{EVRD}
+
+%description -n %{sdevname}
+This package includes the static libraries for %{name}.
+
 %if %{with compat32}
 %package -n %{lib32name}
 Group:		System/Libraries
@@ -73,6 +84,15 @@ Requires:	%{lib32name} = %{version}-%{release}
 
 %description -n %{dev32name}
 This package includes the development files for %{name}.
+
+%package -n %{sdev32name}
+Group:		Development/C
+Summary:	GNU Unicode string library - static libraries
+Requires:	%{sdevname} = %{version}-%{release}
+Requires:	%{dev32name} = %{version}-%{release}
+
+%description -n %{sdev32name}
+This package includes the static libraries for %{name}.
 %endif
 
 %prep
@@ -84,13 +104,15 @@ export CONFIGURE_TOP="$(pwd)"
 %if %{with compat32}
 mkdir build32
 cd build32
-%configure32
+%configure32 \
+	--enable-static
 cd ..
 %endif
 
 mkdir build
 cd build
-%configure
+%configure \
+	--enable-static
 
 %build
 %if %{with compat32}
@@ -117,6 +139,9 @@ cd build
 %{_includedir}/*.h
 %{_libdir}/pkgconfig/*.pc
 
+%files -n %{sdevname}
+%{_libdir}/libunistring.a
+
 %if %{with compat32}
 %files -n %{lib32name}
 %{_prefix}/lib/libunistring.so.%{major}*
@@ -124,4 +149,7 @@ cd build
 %files -n %{dev32name}
 %{_prefix}/lib/libunistring.so
 %{_prefix}/lib/pkgconfig/*.pc
+
+%files -n %{sdev32name}
+%{_prefix}/lib/lib*.a
 %endif
