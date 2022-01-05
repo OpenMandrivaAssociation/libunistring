@@ -18,15 +18,14 @@
 
 Summary:	GNU Unicode string library
 Name:		libunistring
-Version:	0.9.10
-Release:	6
+Version:	1.0
+Release:	1
 License:	LGPLv2+
 Group:		System/Libraries
 Url:		http://www.gnu.org/software/libunistring/
 Source0:	http://ftp.gnu.org/gnu/libunistring/%{name}-%{version}.tar.xz
-Patch0:		libunistring-0.9.8-check-for-__builtin_mul_overflow_p.patch
+Patch0:		libunistring-1.0-attribute-dealloc-clang.patch
 Patch1:		libunistring-0.9.10-add-pkg-config-support.patch
-Patch2:		libunistring-autoconf.patch
 #BuildRequires:	locales-fr
 #BuildRequires:	texinfo
 
