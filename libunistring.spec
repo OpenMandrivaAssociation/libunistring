@@ -18,7 +18,7 @@
 
 Summary:	GNU Unicode string library
 Name:		libunistring
-Version:	1.0
+Version:	1.1
 Release:	1
 License:	LGPLv2+
 Group:		System/Libraries
@@ -135,7 +135,7 @@ cd build
 %doc AUTHORS NEWS README
 %doc %{_datadir}/doc/%{name}/*.html
 %{_libdir}/libunistring.so
-%{_infodir}/libunistring.info*
+%doc %{_infodir}/libunistring.info*
 %{_includedir}/unistring
 %{_includedir}/*.h
 %{_libdir}/pkgconfig/*.pc
