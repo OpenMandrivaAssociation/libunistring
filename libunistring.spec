@@ -6,7 +6,7 @@
 %bcond_with compat32
 %endif
 
-%define major 2
+%define major 5
 %define libname %mklibname unistring %{major}
 %define devname %mklibname -d unistring
 %define sdevname %mklibname -d -s unistring
