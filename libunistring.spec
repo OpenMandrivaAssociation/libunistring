@@ -19,7 +19,7 @@
 Summary:	GNU Unicode string library
 Name:		libunistring
 Version:	1.1
-Release:	2
+Release:	3
 License:	LGPLv2+
 Group:		System/Libraries
 Url:		http://www.gnu.org/software/libunistring/
