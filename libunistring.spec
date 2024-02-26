@@ -7,10 +7,14 @@
 %endif
 
 %define major 5
-%define libname %mklibname unistring %{major}
+%define veryoldlibname %mklibname unistring 2
+%define oldlibname %mklibname unistring 5
+%define libname %mklibname unistring
 %define devname %mklibname -d unistring
 %define sdevname %mklibname -d -s unistring
-%define lib32name libunistring%{major}
+%define oldlib32name libunistring5
+%define veryoldlib32name libunistring2
+%define lib32name libunistring
 %define dev32name libunistring-devel
 %define sdev32name libunistring-static-devel
 
@@ -28,6 +32,14 @@ Patch0:		libunistring-1.0-attribute-dealloc-clang.patch
 Patch1:		libunistring-0.9.10-add-pkg-config-support.patch
 #BuildRequires:	locales-fr
 #BuildRequires:	texinfo
+%if "%{lib32name}" == "%{name}"
+%rename %{oldlib32name}
+%rename %{veryoldlib32name}
+%endif
+%if  "%{libname}" == "%{name}"
+%rename %{oldlibname}
+%rename %{veryoldlibname}
+%endif
 
 %description
 This library implements Unicode strings (in three flavours: UTF-8
@@ -36,9 +48,13 @@ Unicode charactets (character names, classifications, properties) and
 functions for string processing (formatted output, width, word breaks,
 line breaks, normalization, case folding, regular expressions).
 
+%if  "%{libname}" != "%{name}"
 %package -n %{libname}
 Group:		System/Libraries
 Summary:	GNU Unicode string library
+%rename %{oldlibname}
+%rename %{veryoldlibname}
+%endif
 
 %description -n %{libname}
 This library implements Unicode strings (in three flavours: UTF-8
@@ -65,9 +81,12 @@ Provides:	unistring-static-devel = %{EVRD}
 This package includes the static libraries for %{name}.
 
 %if %{with compat32}
+%if "%{lib32name}" != "%{name}"
 %package -n %{lib32name}
 Group:		System/Libraries
 Summary:	GNU Unicode string library (32-bit)
+%rename %{oldlib32name}
+%rename %{veryoldlib32name}
 
 %description -n %{lib32name}
 This library implements Unicode strings (in three flavours: UTF-8
@@ -75,6 +94,7 @@ strings, UTF-16 strings, UTF-32 strings), together with functions for
 Unicode charactets (character names, classifications, properties) and
 functions for string processing (formatted output, width, word breaks,
 line breaks, normalization, case folding, regular expressions).
+%endif
 
 %package -n %{dev32name}
 Group:		Development/C
