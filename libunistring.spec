@@ -7,13 +7,11 @@
 %endif
 
 %define major 5
-%define veryoldlibname %mklibname unistring 2
 %define oldlibname %mklibname unistring 5
 %define libname %mklibname unistring
 %define devname %mklibname -d unistring
 %define sdevname %mklibname -d -s unistring
 %define oldlib32name libunistring5
-%define veryoldlib32name libunistring2
 %define lib32name libunistring
 %define dev32name libunistring-devel
 %define sdev32name libunistring-static-devel
@@ -34,11 +32,9 @@ BuildRequires:	slibtool
 #BuildRequires:	texinfo
 %if "%{lib32name}" == "%{name}"
 %rename %{oldlib32name}
-%rename %{veryoldlib32name}
 %endif
 %if  "%{libname}" == "%{name}"
 %rename %{oldlibname}
-%rename %{veryoldlibname}
 %endif
 
 %description
@@ -53,7 +49,6 @@ line breaks, normalization, case folding, regular expressions).
 Group:		System/Libraries
 Summary:	GNU Unicode string library
 %rename %{oldlibname}
-%rename %{veryoldlibname}
 %endif
 
 %description -n %{libname}
@@ -86,7 +81,6 @@ This package includes the static libraries for %{name}.
 Group:		System/Libraries
 Summary:	GNU Unicode string library (32-bit)
 %rename %{oldlib32name}
-%rename %{veryoldlib32name}
 
 %description -n %{lib32name}
 This library implements Unicode strings (in three flavours: UTF-8
