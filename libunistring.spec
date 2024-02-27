@@ -21,7 +21,7 @@
 Summary:	GNU Unicode string library
 Name:		libunistring
 Version:	1.2
-Release:	1
+Release:	2
 License:	LGPLv2+
 Group:		System/Libraries
 Url:		http://www.gnu.org/software/libunistring/
@@ -29,6 +29,10 @@ Source0:	http://ftp.gnu.org/gnu/libunistring/%{name}-%{version}.tar.xz
 Patch0:		libunistring-1.0-attribute-dealloc-clang.patch
 Patch1:		libunistring-0.9.10-add-pkg-config-support.patch
 BuildRequires:	slibtool
+# Required for the configure check for iconv to succeed
+# (which enables iconv support in libunistring, which is
+# required by guile)
+BuildRequires:	locales-extra-charsets
 #BuildRequires:	texinfo
 %if "%{lib32name}" == "%{name}"
 %rename %{oldlib32name}
