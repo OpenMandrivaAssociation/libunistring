@@ -21,12 +21,13 @@
 Summary:	GNU Unicode string library
 Name:		libunistring
 Version:	1.3
-Release:	1
+Release:	2
 License:	LGPLv2+
 Group:		System/Libraries
 Url:		https://www.gnu.org/software/libunistring/
 Source0:	http://ftp.gnu.org/gnu/libunistring/%{name}-%{version}.tar.xz
 Patch1:		libunistring-0.9.10-add-pkg-config-support.patch
+Patch2:		libunistring-headers-clang.patch
 BuildRequires:	slibtool
 # Required for the configure check for iconv to succeed
 # (which enables iconv support in libunistring, which is
