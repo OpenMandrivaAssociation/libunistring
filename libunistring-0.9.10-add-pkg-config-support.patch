@@ -1,25 +1,25 @@
-diff -up libunistring-1.2/Makefile.am.2~ libunistring-1.2/Makefile.am
---- libunistring-1.2/Makefile.am.2~	2024-02-26 21:05:32.399654874 +0100
-+++ libunistring-1.2/Makefile.am	2024-02-26 21:05:53.615868804 +0100
-@@ -60,3 +60,6 @@ gen-ChangeLog:
+diff -up libunistring-1.4/Makefile.am.1~ libunistring-1.4/Makefile.am
+--- libunistring-1.4/Makefile.am.1~	2025-08-05 22:22:55.000000000 +0200
++++ libunistring-1.4/Makefile.am	2025-09-30 17:23:25.000238241 +0200
+@@ -61,3 +61,6 @@ gen-ChangeLog:
  	    && rm -f "$(distdir)/ChangeLog"                             \
  	    && mv "$(distdir)/ChangeLog-t" "$(distdir)/ChangeLog";      \
  	fi
 +
 +pkgconfigdir = $(libdir)/pkgconfig
 +pkgconfig_DATA = libunistring.pc
-diff -up libunistring-1.2/configure.ac.2~ libunistring-1.2/configure.ac
---- libunistring-1.2/configure.ac.2~	2023-08-30 13:08:13.000000000 +0200
-+++ libunistring-1.2/configure.ac	2024-02-26 21:05:32.399654874 +0100
-@@ -160,4 +160,5 @@ AC_CONFIG_FILES([lib/exported.sh])
- AC_CONFIG_FILES([lib/unistring/version.h:lib/unistring/version.in.h])
+diff -up libunistring-1.4/configure.ac.1~ libunistring-1.4/configure.ac
+--- libunistring-1.4/configure.ac.1~	2025-06-10 21:13:08.000000000 +0200
++++ libunistring-1.4/configure.ac	2025-09-30 17:29:02.137085106 +0200
+@@ -174,4 +174,5 @@ AC_CONFIG_FILES([lib/unistring/version.h
  AC_CONFIG_FILES([lib/unistring/woe32dll.h:lib/unistring/woe32dll.in.h])
  AC_CONFIG_FILES([tests/Makefile])
+ AC_CONFIG_FILES([install-tests/Makefile])
 +AC_CONFIG_FILES([libunistring.pc])
  AC_OUTPUT
-diff -up libunistring-1.2/libunistring.pc.in.2~ libunistring-1.2/libunistring.pc.in
---- libunistring-1.2/libunistring.pc.in.2~	2024-02-26 21:05:32.399654874 +0100
-+++ libunistring-1.2/libunistring.pc.in	2024-02-26 21:05:32.399654874 +0100
+diff -up libunistring-1.4/libunistring.pc.in.1~ libunistring-1.4/libunistring.pc.in
+--- libunistring-1.4/libunistring.pc.in.1~	2025-09-30 17:23:25.000370521 +0200
++++ libunistring-1.4/libunistring.pc.in	2025-09-30 17:23:25.000370521 +0200
 @@ -0,0 +1,11 @@
 +prefix=@prefix@
 +exec_prefix=@exec_prefix@

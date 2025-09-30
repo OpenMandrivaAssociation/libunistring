@@ -20,8 +20,8 @@
 
 Summary:	GNU Unicode string library
 Name:		libunistring
-Version:	1.3
-Release:	2
+Version:	1.4
+Release:	1
 License:	LGPLv2+
 Group:		System/Libraries
 Url:		https://www.gnu.org/software/libunistring/
