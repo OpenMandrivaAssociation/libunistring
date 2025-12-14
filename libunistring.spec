@@ -20,7 +20,7 @@
 
 Summary:	GNU Unicode string library
 Name:		libunistring
-Version:	1.4
+Version:	1.4.1
 Release:	1
 License:	LGPLv2+
 Group:		System/Libraries
