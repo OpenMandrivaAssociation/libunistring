@@ -20,7 +20,7 @@
 
 Summary:	GNU Unicode string library
 Name:		libunistring
-Version:	1.4.1
+Version:	1.4.2
 Release:	1
 License:	LGPLv2+
 Group:		System/Libraries
@@ -30,7 +30,6 @@ Patch1:		libunistring-0.9.10-add-pkg-config-support.patch
 Patch2:		libunistring-headers-clang.patch
 BuildRequires:	autoconf
 BuildRequires:	automake
-BuildRequires:	libtool-base
 BuildRequires:	make
 BuildRequires:	slibtool
 # Required for the configure check for iconv to succeed
