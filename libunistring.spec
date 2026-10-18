@@ -32,6 +32,9 @@ BuildRequires:	autoconf
 BuildRequires:	automake
 BuildRequires:	make
 BuildRequires:	slibtool
+# autogen.sh drops the bundled libtool m4 files and needs LT_INIT.
+# The build itself still links with slibtool.
+BuildRequires:	libtool-autoconf-macros
 # Required for the configure check for iconv to succeed
 # (which enables iconv support in libunistring, which is
 # required by guile)
