@@ -36,7 +36,7 @@ BuildRequires:	slibtool
 # The build itself still links with slibtool.
 BuildRequires:	libtool-autoconf-macros
 %if %{with compat32}
-# %configure32 uses clang -m32 and the i686 sysroot.
+# The 32-bit configure uses clang -m32 and the i686 sysroot.
 BuildRequires:	cross-i686-openmandriva-linux-gnu-clang
 BuildRequires:	cross-i686-openmandriva-linux-gnu-libc
 BuildRequires:	cross-i686-openmandriva-linux-gnu-binutils
