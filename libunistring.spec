@@ -21,7 +21,7 @@
 Summary:	GNU Unicode string library
 Name:		libunistring
 Version:	1.5
-Release:	1
+Release:	2
 License:	LGPLv2+
 Group:		System/Libraries
 Url:		https://www.gnu.org/software/libunistring/
@@ -35,6 +35,13 @@ BuildRequires:	slibtool
 # autogen.sh drops the bundled libtool m4 files and needs LT_INIT.
 # The build itself still links with slibtool.
 BuildRequires:	libtool-autoconf-macros
+%if %{with compat32}
+# %configure32 uses clang -m32 and the i686 sysroot.
+BuildRequires:	cross-i686-openmandriva-linux-gnu-clang
+BuildRequires:	cross-i686-openmandriva-linux-gnu-libc
+BuildRequires:	cross-i686-openmandriva-linux-gnu-binutils
+BuildRequires:	cross-i686-openmandriva-linux-gnu-gcc
+%endif
 # Required for the configure check for iconv to succeed
 # (which enables iconv support in libunistring, which is
 # required by guile)
